@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
     // Phone validation regex (Vietnamese format)
-    const phoneRegex = /^(\+84|0)[0-9]{9,10}$/;
+    const phoneRegex = /^(\+84[0-9]{9}|0[0-9]{9})$/;
 
     // Form field validators
     const validators = {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         phone: function(value) {
             if (value.trim() && !phoneRegex.test(value.trim())) {
-                return 'Số điện thoại không hợp lệ (ví dụ: 0901234567 hoặc +84901234567)';
+                return 'Số điện thoại không hợp lệ (ví dụ: 0912345678 hoặc +84912345678)';
             }
             return '';
         },
